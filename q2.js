@@ -4,3 +4,5 @@ db.users.insertOne(
     age:20
   }
 );
+
+db.users.find()
