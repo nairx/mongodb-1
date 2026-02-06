@@ -20,3 +20,20 @@ rs.initiate({
 //rs.config()
 
 //rs.status()
+
+//new tab
+//mongosh "mongodb://127.0.0.1:27018,127.0.0.1:27019,127.0.0.1:27020/?replicaSet=rs1"
+
+//use mydatabase
+
+//db.users.insertOne({name:"Sumanth",age:21})
+
+//mongosh --port 27019
+//db.getMongo().setReadPref("secondary")
+//use mydatabase
+//db.users.find()
+
+//mongosh --port 27020
+//db.getMongo().setReadPref("secondary")
+//use mydatabase
+//db.users.find()
