@@ -49,3 +49,30 @@ rs.initiate({
 rs.config()
 
 rs.status()
+
+//new tab
+//mongos --configdb cf/127.0.0.1:27018,127.0.0.1:27019 --port 27050
+
+//new tab
+//mongosh --port 27050
+sh.addShard("s1/127.0.0.1:27020,127.0.0.1:27021")
+sh.addShard("s2/127.0.0.1:27022,127.0.0.1:27023")
+sh.status()
+//use icici
+sh.enableSharding("icici")
+sh.shardCollection("icici.customers",{_id:1})
+
+sh.getShardedDataDistribution()
+
+//show collections
+
+//db.customers.insertOne({_id:1,name:"customer1"})
+
+for(let i=30001;i<=50000;i++){
+    db.customers.insertOne({
+        _id:i,
+        name:"customer"+i
+    })
+}
+
+
