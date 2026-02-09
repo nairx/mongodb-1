@@ -33,3 +33,19 @@ rs.initiate({
 rs.config()
 
 rs.status()
+
+//mongod --shardsvr -replSet s2 --dbpath "d:\dbshards\s2" --port 27022
+//mongod --shardsvr -replSet s2 --dbpath "d:\dbshards\s2r" --port 27023
+
+//mongosh --port 27022
+rs.initiate({
+  _id: "s2",
+  members: [
+    { _id: 0, host: "127.0.0.1:27022" },
+    { _id: 1, host: "127.0.0.1:27023" },
+  ],
+});
+
+rs.config()
+
+rs.status()
