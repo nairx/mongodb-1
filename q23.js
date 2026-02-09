@@ -37,3 +37,5 @@ rs.initiate({
 //db.getMongo().setReadPref("secondary")
 //use mydatabase
 //db.users.find()
+
+//db.shutdownServer()
