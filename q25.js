@@ -68,16 +68,17 @@ sh.getShardedDataDistribution()
 
 //db.customers.insertOne({_id:1,name:"customer1"})
 
-for(let i=90001;i<=100000;i++){
-    db.customers.insertOne({
-        _id:i,
-        name:"customer"+i
-    })
-}
-
 //use config
 db.settings.updateOne(
   { _id: "chunksize" },
   { $set: { value: 1 } },
   { upsert: true }
 )
+
+for(let i=1;i<=10000;i++){
+    db.customers.insertOne({
+        _id:i,
+        name:"customer"+i
+    })
+}
+
